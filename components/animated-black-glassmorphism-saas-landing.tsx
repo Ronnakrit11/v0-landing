@@ -57,7 +57,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
   )
 }
 
-export default function Component() {
+export default function AnimatedBlackGlassmorphismSaasLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
