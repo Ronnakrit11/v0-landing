@@ -114,7 +114,6 @@ export default function AnimatedBlackGlassmorphismSaasLanding() {
               <p className="text-xl text-gray-300 mb-8 relative z-10">Streamline your business processes with our cutting-edge SaaS solution</p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 relative z-10">
                 <Button className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-3">Get Started</Button>
-                <Button variant="outline" className="text-white border-white hover:bg-white/20 text-lg px-8 py-3">Learn More</Button>
               </div>
             </motion.div>
           </div>
@@ -126,9 +125,9 @@ export default function AnimatedBlackGlassmorphismSaasLanding() {
             <h2 className="text-4xl font-bold text-white text-center mb-16">Key Features</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
               {[
-                { icon: <Globe className="h-12 w-12 mb-6" />, title: "Global Access", description: "Access your data from anywhere in the world" },
-                { icon: <Zap className="h-12 w-12 mb-6" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
-                { icon: <Shield className="h-12 w-12 mb-6" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
+                { icon: <Globe className="h-9 w-12 mb-1" />, title: "Global Access", description: "Access your data from anywhere in the world" },
+                { icon: <Zap className="h-9 w-12 mb-1" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
+                { icon: <Shield className="h-9 w-12 mb-1" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
               ].map((feature, index) => (
                 <motion.div
                   key={index}
