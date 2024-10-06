@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion, useAnimation, Variants } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ArrowRight, CheckCircle2, Globe, Zap, Shield, BarChart, Users, Laptop, Headphones, Menu, X } from "lucide-react"
+import { ArrowRight, CheckCircle2, Globe, Zap, Shield, BarChart3, Users, Laptop, Headphones, Menu, X } from "lucide-react"
 
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -18,10 +18,11 @@ const staggerChildrenVariants: Variants = {
 
 function AnimatedSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const controls = useAnimation()
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const currentRef = ref.current // Store ref.current in a variable
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
@@ -32,13 +33,13 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
       { threshold: 0.1 }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [controls, isVisible])
@@ -56,7 +57,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
   )
 }
 
-export function AnimatedBlackGlassmorphismSaasLanding() {
+export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -65,7 +66,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-100 overflow-hidden">
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/5 border-b border-gray-800">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold text-white">GlassSaaS</div>
           <nav className="hidden md:flex space-x-8">
@@ -109,10 +110,11 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
               className="backdrop-blur-xl bg-black/30 rounded-2xl p-8 shadow-lg max-w-4xl mx-auto border border-gray-800 relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-gradient-x"></div>
-              <h1 className="text-4xl font-bold text-white mb-6 relative z-10">Transform Your Workflow with GlassSaaS</h1>
+              <h1 className="text-5xl font-bold text-white mb-6 relative z-10">Transform Your Workflow with GlassSaaS</h1>
               <p className="text-xl text-gray-300 mb-8 relative z-10">Streamline your business processes with our cutting-edge SaaS solution</p>
-              <div className="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-4 relative z-10">
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 relative z-10">
                 <Button className="bg-white text-black hover:bg-gray-200 text-lg px-8 py-3">Get Started</Button>
+                <Button variant="outline" className="text-white border-white hover:bg-white/20 text-lg px-8 py-3">Learn More</Button>
               </div>
             </motion.div>
           </div>
@@ -124,9 +126,9 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
             <h2 className="text-4xl font-bold text-white text-center mb-16">Key Features</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
               {[
-                { icon: <Globe className="h-9 w-12 mb-1" />, title: "Global Access", description: "Access your data from anywhere in the world" },
-                { icon: <Zap className="h-9 w-12 mb-1" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
-                { icon: <Shield className="h-9 w-12 mb-1" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
+                { icon: <Globe className="h-12 w-12 mb-6" />, title: "Global Access", description: "Access your data from anywhere in the world" },
+                { icon: <Zap className="h-12 w-12 mb-6" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
+                { icon: <Shield className="h-12 w-12 mb-6" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
               ].map((feature, index) => (
                 <motion.div
                   key={index}
@@ -148,7 +150,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
         </AnimatedSection>
 
         {/* Pricing Section */}
-        <AnimatedSection className="py-20 bg-black/20">
+        <AnimatedSection  className="py-20 bg-black/20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-white text-center mb-16">Simple Pricing</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
@@ -186,7 +188,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
             <h2 className="text-4xl font-bold text-white text-center mb-16">Why Choose GlassSaaS?</h2>
             <motion.div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" variants={staggerChildrenVariants}>
               <motion.div className="backdrop-blur-md bg-black/30 rounded-xl p-8 text-white border border-gray-800 col-span-1 sm:col-span-2 lg:col-span-2 h-auto sm:h-80" variants={fadeInUpVariants} whileHover={{ scale: 1.02 }}>
-                <BarChart className="h-16 w-16 mb-6 text-blue-400" />
+                <BarChart3 className="h-16 w-16 mb-6 text-blue-400" />
                 <h3 className="text-2xl font-semibold mb-4">Advanced Analytics</h3>
                 <p className="text-gray-300">Gain deep insights into your business performance with our powerful analytics tools. Visualize trends, track KPIs, and make data-driven decisions to propel your business forward.</p>
               </motion.div>
@@ -232,7 +234,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
         </AnimatedSection>
 
         {/* Call to Action */}
-        <AnimatedSection  className="py-20 bg-black/20">
+        <AnimatedSection className="py-20 bg-black/20">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
