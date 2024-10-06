@@ -222,11 +222,11 @@ export default function AnimatedBlackGlassmorphismSaasLanding() {
               className="backdrop-blur-xl bg-black/30 rounded-xl p-12 shadow-lg max-w-4xl mx-auto border border-gray-800 relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-gradient-x"></div>
-              <p className="text-2xl text-gray-300 mb-8 relative z-10">"GlassSaaS has revolutionized our workflow. It's intuitive, powerful, and has saved us countless hours. The analytics features have provided invaluable insights for our business strategy."</p>
+              <p className="text-2xl text-gray-300 mb-8 relative z-10">Lorem</p>
               <div className="flex items-center justify-end relative z-10">
                 <div>
                   <p className="text-white font-semibold text-lg">Jane Doe</p>
-                  <p className="text-gray-400">CEO, Tech Innov</p>
+                  <p className="text-gray-400">CEO Tech Innov</p>
                 </div>
               </div>
             </motion.div>
