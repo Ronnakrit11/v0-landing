@@ -65,7 +65,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-100 overflow-hidden">
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-gray-800">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/5 border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold text-white">GlassSaaS</div>
           <nav className="hidden md:flex space-x-8">
