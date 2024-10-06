@@ -125,9 +125,9 @@ export default function AnimatedBlackGlassmorphismSaasLanding() {
             <h2 className="text-4xl font-bold text-white text-center mb-16">Key Features</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
               {[
-                { icon: <Globe className="h-9 w-12 mb-1" />, title: "Global Access", description: "Access your data from anywhere in the world" },
-                { icon: <Zap className="h-9 w-12 mb-1" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
-                { icon: <Shield className="h-9 w-12 mb-1" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
+                { icon: <Globe className="h-10 w-12 mb-1" />, title: "Global Access", description: "Access your data from anywhere in the world" },
+                { icon: <Zap className="h-10 w-12 mb-1" />, title: "Lightning Fast", description: "Optimized for speed and efficiency" },
+                { icon: <Shield className="h-10 w-12 mb-1" />, title: "Secure & Reliable", description: "Bank-grade security with 99.99% uptime" },
               ].map((feature, index) => (
                 <motion.div
                   key={index}
