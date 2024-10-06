@@ -119,7 +119,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
         </AnimatedSection>
 
         {/* Features Section */}
-        <AnimatedSection id="features" className="py-20">
+        <AnimatedSection className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-white text-center mb-16">Key Features</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
@@ -148,7 +148,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
         </AnimatedSection>
 
         {/* Pricing Section */}
-        <AnimatedSection id="pricing" className="py-20 bg-black/20">
+        <AnimatedSection className="py-20 bg-black/20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-white text-center mb-16">Simple Pricing</h2>
             <motion.div className="grid md:grid-cols-3 gap-12" variants={staggerChildrenVariants}>
@@ -232,7 +232,7 @@ export function AnimatedBlackGlassmorphismSaasLanding() {
         </AnimatedSection>
 
         {/* Call to Action */}
-        <AnimatedSection id="contact" className="py-20 bg-black/20">
+        <AnimatedSection  className="py-20 bg-black/20">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
